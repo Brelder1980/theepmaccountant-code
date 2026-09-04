@@ -1,0 +1,13 @@
+type MigrationCost = {
+  licenses: number;
+  integrator: number;
+  parallelCloseMonths: number;
+  opportunityCostPerMonth: number;
+};
+ 
+export function trueCost(c: MigrationCost) {
+  return (
+    c.licenses +
+    c.integrator +
+    c.parallelCloseMonths * c.opportunityCostPerMonth
+  );
